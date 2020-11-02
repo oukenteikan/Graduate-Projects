@@ -1,0 +1,51 @@
+THCudaCheck FAIL file=/pytorch/aten/src/THC/THCTensorCopy.cu line=102 error=59 : device-side assert triggered
+/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py:477: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters().
+  result = self.forward(*input, **kwargs)
+Producing dataset...
+Saved dictionary to all_vocab.pkl
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+[WeightDrop(
+  (module): LSTM(500, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 500)
+)]
+Resuming model ...
+Args: Namespace(alpha=2, batch_size=64, beta=1, bptt=70, clip=0.25, cuda=True, dropout=0.1, dropoute=0.2, dropouth=0.1, dropouti=0.2, emsize=500, epochs=64, log_interval=100, lr=30, model='LSTM', nhid=1000, nlayers=3, nonmono=5, optimizer='sgd', resume='./pretrain/stage2_pretrain.pt', save='model.pt', save_dir='./title2story_models/', seed=141, test_data='/home/charlie/nlp/data/new_key_no_overlap_roc.test', tied=True, train_data='/home/charlie/nlp/data/new_key_no_overlap_roc.train', valid_data='/home/charlie/nlp/data/new_key_no_overlap_roc.test', vocab_file='all_vocab.pkl', wdecay=1.2e-06, wdrop=0.1, when=[-1])
+Model total parameters: 35990365
+| epoch   1 |   100/ 1310 batches | lr 30.00000 | ms/batch 122.42 | loss  6.43 | ppl   619.65 | bpc    9.275
+| epoch   1 |   200/ 1310 batches | lr 30.00000 | ms/batch 116.74 | loss  5.50 | ppl   244.49 | bpc    7.934
+| epoch   1 |   300/ 1310 batches | lr 30.00000 | ms/batch 117.15 | loss  5.22 | ppl   185.40 | bpc    7.535
+| epoch   1 |   400/ 1310 batches | lr 30.00000 | ms/batch 114.69 | loss  5.07 | ppl   159.96 | bpc    7.322
+| epoch   1 |   500/ 1310 batches | lr 30.00000 | ms/batch 120.05 | loss  4.97 | ppl   143.62 | bpc    7.166
+| epoch   1 |   600/ 1310 batches | lr 30.00000 | ms/batch 118.00 | loss  4.92 | ppl   137.36 | bpc    7.102
+| epoch   1 |   700/ 1310 batches | lr 30.00000 | ms/batch 118.95 | loss  4.82 | ppl   123.89 | bpc    6.953
+| epoch   1 |   800/ 1310 batches | lr 30.00000 | ms/batch 121.12 | loss  4.76 | ppl   117.16 | bpc    6.872
+| epoch   1 |   900/ 1310 batches | lr 30.00000 | ms/batch 119.69 | loss  4.73 | ppl   113.82 | bpc    6.831
+| epoch   1 |  1000/ 1310 batches | lr 30.00000 | ms/batch 118.26 | loss  4.69 | ppl   108.33 | bpc    6.759
+| epoch   1 |  1100/ 1310 batches | lr 30.00000 | ms/batch 118.31 | loss  4.62 | ppl   101.65 | bpc    6.667
+| epoch   1 |  1200/ 1310 batches | lr 30.00000 | ms/batch 121.15 | loss  4.60 | ppl    99.72 | bpc    6.640
+| epoch   1 |  1300/ 1310 batches | lr 30.00000 | ms/batch 118.09 | loss  4.59 | ppl    98.65 | bpc    6.624
+Traceback (most recent call last):
+  File "main.py", line 270, in <module>
+    val_loss = evaluate(val_data, eval_batch_size)
+  File "main.py", line 170, in evaluate
+    output, hidden = model(data, hidden)
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/charlie/nlp/v3.1/pytorch_src/model.py", line 81, in forward
+    raw_output, new_h = rnn(raw_output, hidden[l])
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/charlie/nlp/v3.1/pytorch_src/weight_drop.py", line 47, in forward
+    return self.module.forward(*args)
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: cuda runtime error (59) : device-side assert triggered at /pytorch/aten/src/THC/THCTensorCopy.cu:102

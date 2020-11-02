@@ -1,0 +1,13 @@
+Producing dataset...
+Saved dictionary to small_vacab.pkl
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+[WeightDrop(
+  (module): LSTM(500, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 500)
+)]
+Resuming model ...

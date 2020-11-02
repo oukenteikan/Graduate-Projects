@@ -1,0 +1,8 @@
+/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py:477: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters().
+  result = self.forward(*input, **kwargs)
+ntokens:  37904
+eot id: 2 | eol id: 7 | eos id: 31 | delimiter id: 6596
+Traceback (most recent call last):
+  File "generate.py", line 153, in <module>
+    print("Why can't I match the str {} {} with id {} {} at sentence {}".format(corpus.dictionary.idx2word[eol_id], corpus.dictionary.idx2word[word_idx], eol_idx, word_idx, nsent+1))
+NameError: name 'eol_idx' is not defined

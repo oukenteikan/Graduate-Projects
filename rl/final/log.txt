@@ -1,0 +1,582 @@
+2020-12-02 22:12:17 windy_gridworld.py <module> [20]: Setting logger done.
+2020-12-02 22:12:17 windy_gridworld.py <module> [33]: Setting environment done.
+2020-12-02 22:12:17 windy_gridworld.py <module> [49]: Setting hyperparameters done.
+2020-12-02 22:12:17 windy_gridworld.py q_learning [160]: Method       : q_learning
+2020-12-02 22:12:17 windy_gridworld.py q_learning [161]: Stochastic   : False
+2020-12-02 22:12:17 windy_gridworld.py q_learning [162]: King's move  : False
+2020-12-02 22:12:17 windy_gridworld.py q_learning [163]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 10000
+2020-12-02 22:12:24 windy_gridworld.py draw_figure [86]: Saving plot figures/windy_gridworld_q_learning_stochastic_False_king_False_10000.png done
+2020-12-02 22:12:25 windy_gridworld.py draw_table [129]: Optimal strategy table: 
++--------------------------------------------------------------------------------------------------------------------------+
+|                                          q_learning_stochastic_False_king_False                                          |
++---------+-------+-------+-------+-------+-------------+-------------+-------------+--------------------+-------+---------+
+| row/col |   0   |   1   |   2   |   3   |      4      |      5      |      6      |         7          |   8   |    9    |
++---------+-------+-------+-------+-------+-------------+-------------+-------------+--------------------+-------+---------+
+|    0    |  down | right | right | right |    right    |    right    |    right    |       right        | right |   down  |
+|    1    | right | right | right | right |    right    |    right    |    right    |       right        | right |   down  |
+|    2    | right | right | right | right |    right    |    right    |    right    |       right        | right |   down  |
+|    3    | right | right | right | right |    right    |    right    |    right    | up_down_left_right | right |   down  |
+|    4    | right | right | right | right |    right    |    right    | Never reach |        down        |  left |   left  |
+|    5    |  down | right | right | right |    right    | Never reach | Never reach |        down        |  left | up_left |
+|    6    | right | right | right |  down | Never reach | Never reach | Never reach |    Never reach     |   up  |   left  |
++---------+-------+-------+-------+-------+-------------+-------------+-------------+--------------------+-------+---------+
+2020-12-02 22:12:25 windy_gridworld.py draw_table [130]: Optimal visualized table: 
++-------------------------------------------------------------------------------------------+
+|                           q_learning_stochastic_False_king_False                          |
++---------+---+---+---+---+-------------+-------------+-------------+-------------+---+-----+
+| row/col | 0 | 1 | 2 | 3 |      4      |      5      |      6      |      7      | 8 |  9  |
++---------+---+---+---+---+-------------+-------------+-------------+-------------+---+-----+
+|    0    | ↓ | → | → | → |      →      |      →      |      →      |      →      | → |  ↓  |
+|    1    | → | → | → | → |      →      |      →      |      →      |      →      | → |  ↓  |
+|    2    | → | → | → | → |      →      |      →      |      →      |      →      | → |  ↓  |
+|    3    | → | → | → | → |      →      |      →      |      →      |   ↑ ↓ ← →   | → |  ↓  |
+|    4    | → | → | → | → |      →      |      →      | Never reach |      ↓      | ← |  ←  |
+|    5    | ↓ | → | → | → |      →      | Never reach | Never reach |      ↓      | ← | ↑ ← |
+|    6    | → | → | → | ↓ | Never reach | Never reach | Never reach | Never reach | ↑ |  ←  |
++---------+---+---+---+---+-------------+-------------+-------------+-------------+---+-----+
+2020-12-02 22:12:25 windy_gridworld.py draw_table [131]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                          q_learning_stochastic_False_king_False                         |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    | -7.58 | -7.46 | -7.18 | -6.86 | -6.51 | -6.13 |  -5.7 | -5.22 | -4.69 |  -4.1 |
+|    1    |  -7.7 | -7.46 | -7.18 | -6.86 | -6.51 | -6.13 |  -5.7 | -5.22 | -4.69 | -3.44 |
+|    2    | -7.71 | -7.46 | -7.18 | -6.86 | -6.51 | -6.13 |  -5.7 | -5.01 |  -4.1 | -2.71 |
+|    3    | -7.71 | -7.46 | -7.18 | -6.86 | -6.51 | -6.13 | -5.69 |  0.0  | -3.44 |  -1.9 |
+|    4    | -7.71 | -7.46 | -7.18 | -6.86 | -6.51 | -6.11 |  0.0  |  0.0  |  0.0  |  -1.0 |
+|    5    | -7.67 | -7.46 | -7.18 | -6.86 | -6.47 |  0.0  |  0.0  | -0.75 |  -1.0 |  -1.9 |
+|    6    | -7.49 | -7.27 | -7.07 | -6.79 |  0.0  |  0.0  |  0.0  |  0.0  | -0.97 | -1.82 |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+2020-12-02 22:12:25 windy_gridworld.py sarsa [197]: Method       : sarsa
+2020-12-02 22:12:25 windy_gridworld.py sarsa [198]: Stochastic   : False
+2020-12-02 22:12:25 windy_gridworld.py sarsa [199]: King's move : False
+2020-12-02 22:12:25 windy_gridworld.py sarsa [200]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 10000
+2020-12-02 22:12:34 windy_gridworld.py draw_figure [86]: Saving plot figures/windy_gridworld_sarsa_stochastic_False_king_False_10000.png done
+2020-12-02 22:12:35 windy_gridworld.py draw_table [129]: Optimal strategy table: 
++-----------------------------------------------------------------------------------------------------------------------+
+|                                           sarsa_stochastic_False_king_False                                           |
++---------+-------+-------+-------+-------+-------------+-------------+-------------+--------------------+-------+------+
+| row/col |   0   |   1   |   2   |   3   |      4      |      5      |      6      |         7          |   8   |  9   |
++---------+-------+-------+-------+-------+-------------+-------------+-------------+--------------------+-------+------+
+|    0    | right | right | right | right |    right    |    right    |    right    |       right        | right | down |
+|    1    | right | right | right | right |      up     |    right    |    right    |       right        | right | down |
+|    2    | right | right |   up  | right |    right    |    right    |    right    |         up         | right | down |
+|    3    | right | right | right | right |    right    |    right    |    right    | up_down_left_right | right | down |
+|    4    |   up  | right | right | right |    right    |    right    | Never reach |        down        |  left | left |
+|    5    | right |  down |  down | right |    right    | Never reach | Never reach |        down        |  left |  up  |
+|    6    | right | right | right | right | Never reach | Never reach | Never reach |    Never reach     |   up  | left |
++---------+-------+-------+-------+-------+-------------+-------------+-------------+--------------------+-------+------+
+2020-12-02 22:12:35 windy_gridworld.py draw_table [130]: Optimal visualized table: 
++-----------------------------------------------------------------------------------------+
+|                            sarsa_stochastic_False_king_False                            |
++---------+---+---+---+---+-------------+-------------+-------------+-------------+---+---+
+| row/col | 0 | 1 | 2 | 3 |      4      |      5      |      6      |      7      | 8 | 9 |
++---------+---+---+---+---+-------------+-------------+-------------+-------------+---+---+
+|    0    | → | → | → | → |      →      |      →      |      →      |      →      | → | ↓ |
+|    1    | → | → | → | → |      ↑      |      →      |      →      |      →      | → | ↓ |
+|    2    | → | → | ↑ | → |      →      |      →      |      →      |      ↑      | → | ↓ |
+|    3    | → | → | → | → |      →      |      →      |      →      |   ↑ ↓ ← →   | → | ↓ |
+|    4    | ↑ | → | → | → |      →      |      →      | Never reach |      ↓      | ← | ← |
+|    5    | → | ↓ | ↓ | → |      →      | Never reach | Never reach |      ↓      | ← | ↑ |
+|    6    | → | → | → | → | Never reach | Never reach | Never reach | Never reach | ↑ | ← |
++---------+---+---+---+---+-------------+-------------+-------------+-------------+---+---+
+2020-12-02 22:12:35 windy_gridworld.py draw_table [131]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                            sarsa_stochastic_False_king_False                            |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    | -8.39 | -8.07 | -7.64 | -7.39 | -6.93 | -6.68 |  -6.3 | -6.05 | -5.68 | -4.97 |
+|    1    | -8.44 | -7.98 | -7.69 | -7.33 | -7.46 | -6.67 | -6.15 | -5.88 | -5.58 |  -4.4 |
+|    2    | -8.37 | -8.22 |  -8.0 | -7.66 | -6.92 | -6.65 | -6.31 |  -6.1 | -4.99 | -3.92 |
+|    3    |  -8.3 | -7.91 | -7.55 | -7.22 | -7.13 | -6.99 | -6.19 |  0.0  | -4.09 | -2.98 |
+|    4    | -8.37 | -8.29 | -7.78 | -7.48 | -7.48 | -6.68 |  0.0  |  0.0  |  0.0  | -1.38 |
+|    5    | -8.34 |  -8.1 | -7.89 | -7.91 | -7.14 |  0.0  |  0.0  | -1.36 |  -2.4 | -2.39 |
+|    6    | -8.23 | -7.89 | -7.66 | -7.43 |  0.0  |  0.0  |  0.0  |  0.0  | -1.45 | -3.02 |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+2020-12-02 22:12:45 windy_gridworld.py <module> [20]: Setting logger done.
+2020-12-02 22:12:45 windy_gridworld.py <module> [33]: Setting environment done.
+2020-12-02 22:12:45 windy_gridworld.py <module> [49]: Setting hyperparameters done.
+2020-12-02 22:12:45 windy_gridworld.py q_learning [160]: Method       : q_learning
+2020-12-02 22:12:45 windy_gridworld.py q_learning [161]: Stochastic   : False
+2020-12-02 22:12:45 windy_gridworld.py q_learning [162]: King's move  : True
+2020-12-02 22:12:45 windy_gridworld.py q_learning [163]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 10000
+2020-12-02 22:12:49 windy_gridworld.py draw_figure [86]: Saving plot figures/windy_gridworld_q_learning_stochastic_False_king_True_10000.png done
+2020-12-02 22:12:51 windy_gridworld.py draw_table [129]: Optimal strategy table: 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                            q_learning_stochastic_False_king_True                                                                                                                                             |
++---------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+------------------------------------------------------+-------------------------------------+---------------------------------+
+| row/col |            0            |            1            |            2            |            3            |            4            |            5            |            6            |                          7                           |                  8                  |                9                |
++---------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+------------------------------------------------------+-------------------------------------+---------------------------------+
+|    0    |        downright        |          upleft         |           down          |          upleft         |        downright        |          right          | right_upright_downright |               right_upright_downright                |       right_upright_downright       |          down_downright         |
+|    1    |        downright        |        downright        |      down_downleft      |         downleft        |         upright         |          right          | right_upright_downright |               right_upright_downright                |              downright              |          down_downright         |
+|    2    |     right_downright     |        downright        |           down          |         downleft        |         downleft        | right_upright_downright | right_upright_downright |                      downright                       |              downright              |             downleft            |
+|    3    | right_upright_downright |     right_downright     |        downright        |         downleft        |         downleft        |        downright        |        downright        | up_down_left_right_upleft_downleft_upright_downright |               downleft              |             downleft            |
+|    4    | right_upright_downright | right_upright_downright |     right_downright     |        downright        |        downright        |        downright        |        downright        |                      down_left                       |                 left                |                up               |
+|    5    |        downright        | right_upright_downright | right_upright_downright |     right_downright     |     right_downright     |     right_downright     |          right          |                   up_left_downleft                   | down_right_upleft_upright_downright |      right_downleft_upright     |
+|    6    |         upright         |         upright         | right_upright_downright | right_upright_downright | right_upright_downright | right_upright_downright |         upright         |                     Never reach                      |             Never reach             | up_down_left_downleft_downright |
++---------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+------------------------------------------------------+-------------------------------------+---------------------------------+
+2020-12-02 22:12:51 windy_gridworld.py draw_table [130]: Optimal visualized table: 
++-------------------------------------------------------------------------------------------------------------+
+|                                    q_learning_stochastic_False_king_True                                    |
++---------+-------+-------+-------+-------+-------+-------+-------+-----------------+-------------+-----------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |        7        |      8      |     9     |
++---------+-------+-------+-------+-------+-------+-------+-------+-----------------+-------------+-----------+
+|    0    |   ↘   |   ↖   |   ↓   |   ↖   |   ↘   |   →   | → ↗ ↘ |      → ↗ ↘      |    → ↗ ↘    |    ↓ ↘    |
+|    1    |   ↘   |   ↘   |  ↓ ↙  |   ↙   |   ↗   |   →   | → ↗ ↘ |      → ↗ ↘      |      ↘      |    ↓ ↘    |
+|    2    |  → ↘  |   ↘   |   ↓   |   ↙   |   ↙   | → ↗ ↘ | → ↗ ↘ |        ↘        |      ↘      |     ↙     |
+|    3    | → ↗ ↘ |  → ↘  |   ↘   |   ↙   |   ↙   |   ↘   |   ↘   | ↑ ↓ ← → ↖ ↙ ↗ ↘ |      ↙      |     ↙     |
+|    4    | → ↗ ↘ | → ↗ ↘ |  → ↘  |   ↘   |   ↘   |   ↘   |   ↘   |       ↓ ←       |      ←      |     ↑     |
+|    5    |   ↘   | → ↗ ↘ | → ↗ ↘ |  → ↘  |  → ↘  |  → ↘  |   →   |      ↑ ← ↙      |  ↓ → ↖ ↗ ↘  |   → ↙ ↗   |
+|    6    |   ↗   |   ↗   | → ↗ ↘ | → ↗ ↘ | → ↗ ↘ | → ↗ ↘ |   ↗   |   Never reach   | Never reach | ↑ ↓ ← ↙ ↘ |
++---------+-------+-------+-------+-------+-------+-------+-------+-----------------+-------------+-----------+
+2020-12-02 22:12:51 windy_gridworld.py draw_table [131]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                          q_learning_stochastic_False_king_True                          |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    | -5.07 | -5.04 | -5.22 | -5.66 |  -5.7 | -5.22 | -4.69 |  -4.1 | -3.44 | -2.71 |
+|    1    | -4.69 | -4.69 | -4.69 | -5.22 | -5.69 | -5.22 | -4.69 |  -4.1 | -2.71 |  -1.9 |
+|    2    | -4.69 |  -4.1 |  -4.1 | -4.69 | -5.22 | -5.22 | -4.69 | -3.44 |  -1.9 |  -1.0 |
+|    3    | -4.69 |  -4.1 | -3.44 |  -4.1 | -4.69 | -4.69 |  -4.1 |  0.0  |  0.0  |  -1.0 |
+|    4    | -4.69 |  -4.1 | -3.44 | -2.71 |  -1.9 |  -1.0 |  0.0  |  0.0  |  0.0  | -0.72 |
+|    5    | -4.69 |  -4.1 | -3.44 | -2.71 |  -1.9 |  -1.0 |  0.0  |  0.0  |  0.0  |  0.0  |
+|    6    | -4.56 |  -4.1 | -3.44 | -2.71 |  -1.9 |  -1.0 |  0.0  |  0.0  |  0.0  |  0.0  |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+2020-12-02 22:12:51 windy_gridworld.py sarsa [197]: Method       : sarsa
+2020-12-02 22:12:51 windy_gridworld.py sarsa [198]: Stochastic   : False
+2020-12-02 22:12:51 windy_gridworld.py sarsa [199]: King's move : True
+2020-12-02 22:12:51 windy_gridworld.py sarsa [200]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 10000
+2020-12-02 22:12:56 windy_gridworld.py draw_figure [86]: Saving plot figures/windy_gridworld_sarsa_stochastic_False_king_True_10000.png done
+2020-12-02 22:12:57 windy_gridworld.py draw_table [129]: Optimal strategy table: 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                            sarsa_stochastic_False_king_True                                                                           |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+----------------------+-----------+
+| row/col |     0     |     1     |     2     |     3     |     4     |     5     |     6     |                          7                           |          8           |     9     |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+----------------------+-----------+
+|    0    |    left   |   upleft  |   right   |    down   |  upright  |   right   |  upright  |                       upright                        |        right         | downright |
+|    1    |     up    |    down   | downright |   right   |   right   | downright |   right   |                      downright                       |      downright       |    down   |
+|    2    |  downleft |    down   |  downleft |  downleft |   right   |  upright  |   right   |                      downright                       |      downright       |  downleft |
+|    3    | downright |    down   |    down   |  downleft | downright | downright | downright | up_down_left_right_upleft_downleft_upright_downright |       downleft       | downright |
+|    4    | downright | downright |    down   |  downleft | downright | downright | downright |                         down                         |         left         | downright |
+|    5    | downright | downright | downright | downright |   right   |   right   |   right   |            down_right_downleft_downright             |        upleft        | downright |
+|    6    |   right   | downright |   right   | downright | downright |  upright  |  upright  |            up_down_left_downleft_upright             | left_right_downright |  downleft |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+----------------------+-----------+
+2020-12-02 22:12:57 windy_gridworld.py draw_table [130]: Optimal visualized table: 
++-------------------------------------------------------------------+
+|                  sarsa_stochastic_False_king_True                 |
++---------+---+---+---+---+---+---+---+-----------------+-------+---+
+| row/col | 0 | 1 | 2 | 3 | 4 | 5 | 6 |        7        |   8   | 9 |
++---------+---+---+---+---+---+---+---+-----------------+-------+---+
+|    0    | ← | ↖ | → | ↓ | ↗ | → | ↗ |        ↗        |   →   | ↘ |
+|    1    | ↑ | ↓ | ↘ | → | → | ↘ | → |        ↘        |   ↘   | ↓ |
+|    2    | ↙ | ↓ | ↙ | ↙ | → | ↗ | → |        ↘        |   ↘   | ↙ |
+|    3    | ↘ | ↓ | ↓ | ↙ | ↘ | ↘ | ↘ | ↑ ↓ ← → ↖ ↙ ↗ ↘ |   ↙   | ↘ |
+|    4    | ↘ | ↘ | ↓ | ↙ | ↘ | ↘ | ↘ |        ↓        |   ←   | ↘ |
+|    5    | ↘ | ↘ | ↘ | ↘ | → | → | → |     ↓ → ↙ ↘     |   ↖   | ↘ |
+|    6    | → | ↘ | → | ↘ | ↘ | ↗ | ↗ |    ↑ ↓ ← ↙ ↗    | ← → ↘ | ↙ |
++---------+---+---+---+---+---+---+---+-----------------+-------+---+
+2020-12-02 22:12:57 windy_gridworld.py draw_table [131]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                             sarsa_stochastic_False_king_True                            |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    | -6.72 | -6.81 | -6.91 | -6.93 |  -6.5 | -6.02 | -5.96 | -4.69 | -3.62 | -2.73 |
+|    1    | -6.59 | -6.74 | -6.54 | -6.79 | -6.65 | -6.21 |  -5.6 | -4.87 | -3.02 |  -1.9 |
+|    2    | -6.25 | -6.75 | -6.82 |  -6.9 |  -6.7 | -6.09 | -5.54 | -3.94 | -3.25 |  -1.0 |
+|    3    | -5.69 | -5.18 |  -5.8 | -6.32 | -6.05 | -5.04 | -4.46 |  0.0  |  0.0  | -2.72 |
+|    4    | -5.52 | -4.95 | -5.83 | -5.33 | -2.15 | -1.75 |  0.0  |  0.0  |  0.0  |  -1.9 |
+|    5    |  -5.9 | -4.49 |  -4.2 | -4.16 |  -2.6 | -1.59 |  0.0  | -0.97 |  0.0  |  -1.1 |
+|    6    |  -6.0 | -4.81 | -4.03 | -3.11 | -1.99 | -1.03 |  0.0  |  0.0  | -0.72 |  -0.5 |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+2020-13-02 22:13:06 windy_gridworld.py <module> [20]: Setting logger done.
+2020-13-02 22:13:06 windy_gridworld.py <module> [33]: Setting environment done.
+2020-13-02 22:13:06 windy_gridworld.py <module> [49]: Setting hyperparameters done.
+2020-13-02 22:13:06 windy_gridworld.py q_learning [160]: Method       : q_learning
+2020-13-02 22:13:06 windy_gridworld.py q_learning [161]: Stochastic   : True
+2020-13-02 22:13:06 windy_gridworld.py q_learning [162]: King's move  : False
+2020-13-02 22:13:06 windy_gridworld.py q_learning [163]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 10000
+2020-13-02 22:13:22 windy_gridworld.py draw_figure [86]: Saving plot figures/windy_gridworld_q_learning_stochastic_True_king_False_10000.png done
+2020-13-02 22:13:23 windy_gridworld.py draw_table [129]: Optimal strategy table: 
++-----------------------------------------------------------------------------------------------------+
+|                                q_learning_stochastic_True_king_False                                |
++---------+-------+-------+-------+-------+-------+-------+-------+--------------------+-------+------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |         7          |   8   |  9   |
++---------+-------+-------+-------+-------+-------+-------+-------+--------------------+-------+------+
+|    0    |   up  |  left |  down | right | right | right | right |       right        | right | down |
+|    1    | right |  down |  down | right |   up  |  down | right |       right        |   up  | down |
+|    2    | right |  down |  down | right | right | right |  down |       right        |   up  | down |
+|    3    | right |  down |  down | right |  down |  down | right | up_down_left_right | right | down |
+|    4    | right |  down | right | right | right |  down | right |        down        | right | down |
+|    5    | right |  down |  down | right | right |  down |  left |        down        |  left | left |
+|    6    | right | right | right | right | right | right | right |        down        |   up  | left |
++---------+-------+-------+-------+-------+-------+-------+-------+--------------------+-------+------+
+2020-13-02 22:13:23 windy_gridworld.py draw_table [130]: Optimal visualized table: 
++-------------------------------------------------------+
+|         q_learning_stochastic_True_king_False         |
++---------+---+---+---+---+---+---+---+---------+---+---+
+| row/col | 0 | 1 | 2 | 3 | 4 | 5 | 6 |    7    | 8 | 9 |
++---------+---+---+---+---+---+---+---+---------+---+---+
+|    0    | ↑ | ← | ↓ | → | → | → | → |    →    | → | ↓ |
+|    1    | → | ↓ | ↓ | → | ↑ | ↓ | → |    →    | ↑ | ↓ |
+|    2    | → | ↓ | ↓ | → | → | → | ↓ |    →    | ↑ | ↓ |
+|    3    | → | ↓ | ↓ | → | ↓ | ↓ | → | ↑ ↓ ← → | → | ↓ |
+|    4    | → | ↓ | → | → | → | ↓ | → |    ↓    | → | ↓ |
+|    5    | → | ↓ | ↓ | → | → | ↓ | ← |    ↓    | ← | ← |
+|    6    | → | → | → | → | → | → | → |    ↓    | ↑ | ← |
++---------+---+---+---+---+---+---+---+---------+---+---+
+2020-13-02 22:13:23 windy_gridworld.py draw_table [131]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                          q_learning_stochastic_True_king_False                          |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    | -9.22 |  -9.2 | -8.98 | -8.71 | -8.44 | -8.29 | -7.93 | -7.36 | -7.27 | -7.16 |
+|    1    | -9.22 | -8.88 | -8.97 | -8.58 | -8.61 | -8.59 | -7.87 | -8.02 | -7.32 | -7.06 |
+|    2    | -8.97 | -8.77 | -8.85 | -8.06 | -8.49 | -8.36 | -8.23 | -7.67 |  -7.7 | -6.99 |
+|    3    | -8.95 | -8.87 | -8.79 | -8.76 | -8.44 | -8.45 | -8.56 |  0.0  | -8.07 | -7.01 |
+|    4    | -8.88 | -8.79 | -8.71 | -8.62 | -8.55 | -8.47 | -3.75 | -2.99 | -6.42 | -6.71 |
+|    5    | -8.77 |  -8.7 | -8.63 | -8.44 | -8.33 | -7.79 | -8.37 | -5.01 | -5.52 | -5.66 |
+|    6    | -8.85 | -8.64 | -8.24 | -8.28 | -7.82 | -7.33 | -2.04 | -4.28 | -7.37 | -7.43 |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+2020-13-02 22:13:23 windy_gridworld.py sarsa [197]: Method       : sarsa
+2020-13-02 22:13:23 windy_gridworld.py sarsa [198]: Stochastic   : True
+2020-13-02 22:13:23 windy_gridworld.py sarsa [199]: King's move : False
+2020-13-02 22:13:23 windy_gridworld.py sarsa [200]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 10000
+2020-13-02 22:13:42 windy_gridworld.py draw_figure [86]: Saving plot figures/windy_gridworld_sarsa_stochastic_True_king_False_10000.png done
+2020-13-02 22:13:44 windy_gridworld.py draw_table [129]: Optimal strategy table: 
++-----------------------------------------------------------------------------------------------------+
+|                                   sarsa_stochastic_True_king_False                                  |
++---------+-------+-------+-------+-------+-------+-------+-------+--------------------+-------+------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |         7          |   8   |  9   |
++---------+-------+-------+-------+-------+-------+-------+-------+--------------------+-------+------+
+|    0    |  down |  down |  down | right |  down | right | right |        down        | right |  up  |
+|    1    |  down |  down |  down | right | right | right | right |         up         |  left | down |
+|    2    | right | right | right | right | right |  down |  left |         up         | right | down |
+|    3    |  down |  down | right | right | right | right | right | up_down_left_right |  left | down |
+|    4    | right | right | right |  down |  down |  down | right |         up         |   up  | down |
+|    5    |  down |  down | right | right | right | right | right |        down        |  left | down |
+|    6    | right | right | right | right | right | right | right |        left        |   up  | left |
++---------+-------+-------+-------+-------+-------+-------+-------+--------------------+-------+------+
+2020-13-02 22:13:44 windy_gridworld.py draw_table [130]: Optimal visualized table: 
++-------------------------------------------------------+
+|            sarsa_stochastic_True_king_False           |
++---------+---+---+---+---+---+---+---+---------+---+---+
+| row/col | 0 | 1 | 2 | 3 | 4 | 5 | 6 |    7    | 8 | 9 |
++---------+---+---+---+---+---+---+---+---------+---+---+
+|    0    | ↓ | ↓ | ↓ | → | ↓ | → | → |    ↓    | → | ↑ |
+|    1    | ↓ | ↓ | ↓ | → | → | → | → |    ↑    | ← | ↓ |
+|    2    | → | → | → | → | → | ↓ | ← |    ↑    | → | ↓ |
+|    3    | ↓ | ↓ | → | → | → | → | → | ↑ ↓ ← → | ← | ↓ |
+|    4    | → | → | → | ↓ | ↓ | ↓ | → |    ↑    | ↑ | ↓ |
+|    5    | ↓ | ↓ | → | → | → | → | → |    ↓    | ← | ↓ |
+|    6    | → | → | → | → | → | → | → |    ←    | ↑ | ← |
++---------+---+---+---+---+---+---+---+---------+---+---+
+2020-13-02 22:13:44 windy_gridworld.py draw_table [131]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                             sarsa_stochastic_True_king_False                            |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    | -9.52 | -9.49 |  -9.5 | -9.31 | -9.11 | -8.79 | -9.07 | -9.15 | -9.07 | -8.99 |
+|    1    | -9.45 | -9.43 | -9.47 | -9.18 |  -8.8 | -8.94 | -9.07 | -8.38 | -8.37 | -8.52 |
+|    2    | -9.47 | -9.34 | -9.11 | -8.98 | -9.03 | -8.91 | -9.15 | -8.67 | -8.54 | -8.54 |
+|    3    | -9.39 | -9.18 | -9.13 | -9.05 | -8.97 | -8.96 | -8.61 |  0.0  | -4.39 | -8.31 |
+|    4    | -9.34 | -9.28 | -9.21 |  -9.1 | -8.99 | -8.69 | -1.04 | -8.67 | -8.71 | -7.74 |
+|    5    | -9.35 | -9.21 | -9.24 |  -9.0 | -8.91 | -8.39 | -6.39 | -2.98 | -1.92 | -7.51 |
+|    6    | -9.17 | -9.17 | -8.89 | -8.78 | -8.14 | -5.35 |  -1.7 | -7.77 | -4.63 | -6.04 |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+2020-13-02 22:13:50 windy_gridworld.py <module> [20]: Setting logger done.
+2020-13-02 22:13:50 windy_gridworld.py <module> [33]: Setting environment done.
+2020-13-02 22:13:50 windy_gridworld.py <module> [49]: Setting hyperparameters done.
+2020-13-02 22:13:50 windy_gridworld.py q_learning [160]: Method       : q_learning
+2020-13-02 22:13:50 windy_gridworld.py q_learning [161]: Stochastic   : True
+2020-13-02 22:13:50 windy_gridworld.py q_learning [162]: King's move  : True
+2020-13-02 22:13:50 windy_gridworld.py q_learning [163]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 10000
+2020-14-02 22:14:00 windy_gridworld.py draw_figure [86]: Saving plot figures/windy_gridworld_q_learning_stochastic_True_king_True_10000.png done
+2020-14-02 22:14:01 windy_gridworld.py draw_table [129]: Optimal strategy table: 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                    q_learning_stochastic_True_king_True                                                                    |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+-----------+-----------+
+| row/col |     0     |     1     |     2     |     3     |     4     |     5     |     6     |                          7                           |     8     |     9     |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+-----------+-----------+
+|    0    |   right   |  downleft |  downleft | downright |   right   |   right   | downright |                      downright                       | downright | downright |
+|    1    |  downleft | downright |  downleft | downright | downright | downright | downright |                        right                         |   right   |    down   |
+|    2    |    down   |    down   |  downleft | downright |  upright  | downright | downright |                      downright                       | downright |    down   |
+|    3    | downright |    down   |  downleft |  downleft |  upright  |   right   | downright | up_down_left_right_upleft_downleft_upright_downright |    down   |  downleft |
+|    4    | downright | downright | downright | downright | downright |   right   | downright |                      downright                       |    left   |  downleft |
+|    5    |   right   | downright |   right   | downright | downright | downright |    down   |                         down                         |    left   |    left   |
+|    6    | downright |   right   |   right   | downright | downright |   right   |   right   |                       downleft                       |    left   |   upleft  |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+-----------+-----------+
+2020-14-02 22:14:01 windy_gridworld.py draw_table [130]: Optimal visualized table: 
++---------------------------------------------------------------+
+|              q_learning_stochastic_True_king_True             |
++---------+---+---+---+---+---+---+---+-----------------+---+---+
+| row/col | 0 | 1 | 2 | 3 | 4 | 5 | 6 |        7        | 8 | 9 |
++---------+---+---+---+---+---+---+---+-----------------+---+---+
+|    0    | → | ↙ | ↙ | ↘ | → | → | ↘ |        ↘        | ↘ | ↘ |
+|    1    | ↙ | ↘ | ↙ | ↘ | ↘ | ↘ | ↘ |        →        | → | ↓ |
+|    2    | ↓ | ↓ | ↙ | ↘ | ↗ | ↘ | ↘ |        ↘        | ↘ | ↓ |
+|    3    | ↘ | ↓ | ↙ | ↙ | ↗ | → | ↘ | ↑ ↓ ← → ↖ ↙ ↗ ↘ | ↓ | ↙ |
+|    4    | ↘ | ↘ | ↘ | ↘ | ↘ | → | ↘ |        ↘        | ← | ↙ |
+|    5    | → | ↘ | → | ↘ | ↘ | ↘ | ↓ |        ↓        | ← | ← |
+|    6    | ↘ | → | → | ↘ | ↘ | → | → |        ↙        | ← | ↖ |
++---------+---+---+---+---+---+---+---+-----------------+---+---+
+2020-14-02 22:14:01 windy_gridworld.py draw_table [131]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                           q_learning_stochastic_True_king_True                          |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    |  -8.2 | -8.22 |  -8.1 | -7.89 | -7.71 | -6.87 | -6.39 | -5.61 | -5.51 | -5.39 |
+|    1    | -7.77 | -7.65 | -7.86 | -8.16 | -7.18 | -6.73 | -6.15 | -5.86 | -5.31 |  -5.4 |
+|    2    | -7.46 | -7.57 | -7.62 | -7.38 |  -7.3 | -6.71 | -6.17 | -5.81 | -5.37 | -4.89 |
+|    3    | -7.08 | -7.37 |  -7.4 | -7.65 | -7.07 | -6.59 | -2.88 |  0.0  | -5.43 |  -3.9 |
+|    4    | -7.52 | -6.68 | -6.78 | -6.65 | -5.53 | -5.18 | -5.34 | -4.86 | -1.68 | -4.49 |
+|    5    | -7.63 | -7.08 | -6.16 | -5.72 |  -4.1 |  -4.7 | -4.77 | -1.81 |  -2.1 | -5.23 |
+|    6    | -7.05 | -7.38 | -6.64 | -5.93 |  -4.7 | -4.02 | -2.96 | -6.05 |  -5.6 | -6.78 |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+2020-14-02 22:14:01 windy_gridworld.py sarsa [197]: Method       : sarsa
+2020-14-02 22:14:01 windy_gridworld.py sarsa [198]: Stochastic   : True
+2020-14-02 22:14:01 windy_gridworld.py sarsa [199]: King's move : True
+2020-14-02 22:14:01 windy_gridworld.py sarsa [200]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 10000
+2020-14-02 22:14:14 windy_gridworld.py draw_figure [86]: Saving plot figures/windy_gridworld_sarsa_stochastic_True_king_True_10000.png done
+2020-14-02 22:14:17 windy_gridworld.py draw_table [129]: Optimal strategy table: 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                      sarsa_stochastic_True_king_True                                                                      |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+-----------+----------+
+| row/col |     0     |     1     |     2     |     3     |     4     |     5     |     6     |                          7                           |     8     |    9     |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+-----------+----------+
+|    0    |   upleft  |    down   |  downleft |   upleft  | downright | downright |   right   |                        right                         |  upright  |   down   |
+|    1    |    down   | downright |    down   |   right   |   right   | downright |     up    |                       upright                        | downright |   down   |
+|    2    | downright |  downleft |     up    |  downleft |   right   |  upright  |  upright  |                      downright                       | downright |   down   |
+|    3    | downright |    down   | downright |  downleft |   right   | downright | downright | up_down_left_right_upleft_downleft_upright_downright |   right   | downleft |
+|    4    | downright | downright |  downleft |  downleft | downright |  downleft |   right   |                       downleft                       |  downleft |   left   |
+|    5    | downright |     up    |    down   |    down   | downright | downright | downright |                       downleft                       |    left   | downleft |
+|    6    |  upright  |  upright  |   right   | downright | downright |   right   |    down   |                        right                         |   upleft  |   left   |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+-----------+----------+
+2020-14-02 22:14:17 windy_gridworld.py draw_table [130]: Optimal visualized table: 
++---------------------------------------------------------------+
+|                sarsa_stochastic_True_king_True                |
++---------+---+---+---+---+---+---+---+-----------------+---+---+
+| row/col | 0 | 1 | 2 | 3 | 4 | 5 | 6 |        7        | 8 | 9 |
++---------+---+---+---+---+---+---+---+-----------------+---+---+
+|    0    | ↖ | ↓ | ↙ | ↖ | ↘ | ↘ | → |        →        | ↗ | ↓ |
+|    1    | ↓ | ↘ | ↓ | → | → | ↘ | ↑ |        ↗        | ↘ | ↓ |
+|    2    | ↘ | ↙ | ↑ | ↙ | → | ↗ | ↗ |        ↘        | ↘ | ↓ |
+|    3    | ↘ | ↓ | ↘ | ↙ | → | ↘ | ↘ | ↑ ↓ ← → ↖ ↙ ↗ ↘ | → | ↙ |
+|    4    | ↘ | ↘ | ↙ | ↙ | ↘ | ↙ | → |        ↙        | ↙ | ← |
+|    5    | ↘ | ↑ | ↓ | ↓ | ↘ | ↘ | ↘ |        ↙        | ← | ↙ |
+|    6    | ↗ | ↗ | → | ↘ | ↘ | → | ↓ |        →        | ↖ | ← |
++---------+---+---+---+---+---+---+---+-----------------+---+---+
+2020-14-02 22:14:17 windy_gridworld.py draw_table [131]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                             sarsa_stochastic_True_king_True                             |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    | -8.76 | -8.77 |  -8.8 | -8.86 | -8.55 | -8.19 | -8.26 | -8.28 |  -7.9 | -7.17 |
+|    1    | -8.74 | -8.72 | -8.75 | -8.79 | -8.44 | -8.23 | -8.02 | -8.29 | -7.91 | -6.76 |
+|    2    | -8.63 | -8.35 | -8.68 | -8.75 | -8.59 |  -8.3 | -7.72 | -8.23 | -7.25 | -6.91 |
+|    3    | -8.06 | -8.47 | -8.45 | -8.54 | -8.31 |  -5.9 | -7.01 |  0.0  |  -7.3 | -6.93 |
+|    4    | -8.67 | -7.87 | -8.59 | -8.36 | -7.18 | -7.01 |  -3.0 | -6.15 | -3.23 | -4.84 |
+|    5    | -8.58 | -8.37 | -7.65 | -7.23 | -6.66 | -4.09 | -6.15 | -6.21 | -7.13 | -5.73 |
+|    6    | -8.56 | -8.16 | -7.23 | -6.48 | -6.25 | -6.54 | -5.19 | -7.69 | -5.73 | -7.98 |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+2020-04-03 16:04:02 windy_gridworld.py <module> [20]: Setting logger done.
+2020-04-03 16:04:02 windy_gridworld.py <module> [33]: Setting environment done.
+2020-04-03 16:04:02 windy_gridworld.py <module> [49]: Setting hyperparameters done.
+2020-04-03 16:04:02 windy_gridworld.py q_learning [160]: Method       : q_learning
+2020-04-03 16:04:02 windy_gridworld.py q_learning [161]: Stochastic   : False
+2020-04-03 16:04:02 windy_gridworld.py q_learning [162]: King's move  : True
+2020-04-03 16:04:02 windy_gridworld.py q_learning [163]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 10000
+2020-04-03 16:04:09 windy_gridworld.py draw_figure [86]: Saving plot figures/windy_gridworld_q_learning_stochastic_False_king_True_10000.png done
+2020-04-03 16:04:12 windy_gridworld.py draw_table [129]: Optimal strategy table: 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                                       q_learning_stochastic_False_king_True                                                                                                                                                        |
++---------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+------------------------------------------------------+-------------------------------------------+-------------------------------------------------+
+| row/col |            0            |            1            |            2            |            3            |            4            |            5            |            6            |                          7                           |                     8                     |                        9                        |
++---------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+------------------------------------------------------+-------------------------------------------+-------------------------------------------------+
+|    0    |         upright         |            up           |         downleft        |           left          |        downright        |         upright         | right_upright_downright |               right_upright_downright                |          right_upright_downright          |                  down_downright                 |
+|    1    |        downright        |           down          |      down_downleft      |         downleft        |        downright        |          right          | right_upright_downright |               right_upright_downright                |                 downright                 |                  down_downright                 |
+|    2    |     right_downright     |        downright        |           down          |         downleft        |         downleft        | right_upright_downright | right_upright_downright |                      downright                       |                 downright                 |                     downleft                    |
+|    3    | right_upright_downright |     right_downright     |        downright        |         downleft        |         downleft        |        downright        |        downright        | up_down_left_right_upleft_downleft_upright_downright |                  downleft                 |                  left_downleft                  |
+|    4    | right_upright_downright | right_upright_downright |     right_downright     |        downright        |        downright        |        downright        |        downright        |                         down                         |                    left                   |                    left_right                   |
+|    5    |          right          | right_upright_downright | right_upright_downright |     right_downright     |     right_downright     |     right_downright     |          right          |    up_down_left_upleft_downleft_upright_downright    |         left_right_upleft_downleft        | up_left_right_upleft_downleft_upright_downright |
+|    6    |         downleft        |          right          | right_upright_downright | right_upright_downright | right_upright_downright | right_upright_downright |         upright         |                     Never reach                      | up_left_upleft_downleft_upright_downright |             up_left_right_downright             |
++---------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+------------------------------------------------------+-------------------------------------------+-------------------------------------------------+
+2020-04-03 16:04:12 windy_gridworld.py draw_table [130]: Optimal visualized table: 
++-----------------------------------------------------------------------------------------------------------------+
+|                                      q_learning_stochastic_False_king_True                                      |
++---------+-------+-------+-------+-------+-------+-------+-------+-----------------+-------------+---------------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |        7        |      8      |       9       |
++---------+-------+-------+-------+-------+-------+-------+-------+-----------------+-------------+---------------+
+|    0    |   ↗   |   ↑   |   ↙   |   ←   |   ↘   |   ↗   | → ↗ ↘ |      → ↗ ↘      |    → ↗ ↘    |      ↓ ↘      |
+|    1    |   ↘   |   ↓   |  ↓ ↙  |   ↙   |   ↘   |   →   | → ↗ ↘ |      → ↗ ↘      |      ↘      |      ↓ ↘      |
+|    2    |  → ↘  |   ↘   |   ↓   |   ↙   |   ↙   | → ↗ ↘ | → ↗ ↘ |        ↘        |      ↘      |       ↙       |
+|    3    | → ↗ ↘ |  → ↘  |   ↘   |   ↙   |   ↙   |   ↘   |   ↘   | ↑ ↓ ← → ↖ ↙ ↗ ↘ |      ↙      |      ← ↙      |
+|    4    | → ↗ ↘ | → ↗ ↘ |  → ↘  |   ↘   |   ↘   |   ↘   |   ↘   |        ↓        |      ←      |      ← →      |
+|    5    |   →   | → ↗ ↘ | → ↗ ↘ |  → ↘  |  → ↘  |  → ↘  |   →   |  ↑ ↓ ← ↖ ↙ ↗ ↘  |   ← → ↖ ↙   | ↑ ← → ↖ ↙ ↗ ↘ |
+|    6    |   ↙   |   →   | → ↗ ↘ | → ↗ ↘ | → ↗ ↘ | → ↗ ↘ |   ↗   |   Never reach   | ↑ ← ↖ ↙ ↗ ↘ |    ↑ ← → ↘    |
++---------+-------+-------+-------+-------+-------+-------+-------+-----------------+-------------+---------------+
+2020-04-03 16:04:12 windy_gridworld.py draw_table [131]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                          q_learning_stochastic_False_king_True                          |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    | -4.94 | -5.01 | -5.22 | -5.68 |  -5.7 | -5.22 | -4.69 |  -4.1 | -3.44 | -2.71 |
+|    1    | -4.69 | -4.69 | -4.69 | -5.22 | -5.68 | -5.22 | -4.69 |  -4.1 | -2.71 |  -1.9 |
+|    2    | -4.69 |  -4.1 |  -4.1 | -4.69 | -5.22 | -5.22 | -4.69 | -3.44 |  -1.9 |  -1.0 |
+|    3    | -4.69 |  -4.1 | -3.44 |  -4.1 | -4.69 | -4.69 |  -4.1 |  0.0  |  0.0  |  -1.0 |
+|    4    | -4.69 |  -4.1 | -3.44 | -2.71 |  -1.9 |  -1.0 |  0.0  |  0.0  |  0.0  |  -0.5 |
+|    5    | -4.69 |  -4.1 | -3.44 | -2.71 |  -1.9 |  -1.0 |  0.0  |  0.0  |  0.0  |  -0.5 |
+|    6    |  -4.6 |  -4.1 | -3.44 | -2.71 |  -1.9 |  -1.0 |  0.0  |  0.0  |  0.0  |  0.0  |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+2020-04-03 16:04:12 windy_gridworld.py sarsa [196]: Method       : sarsa
+2020-04-03 16:04:12 windy_gridworld.py sarsa [197]: Stochastic   : False
+2020-04-03 16:04:12 windy_gridworld.py sarsa [198]: King's move : True
+2020-04-03 16:04:12 windy_gridworld.py sarsa [199]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 10000
+2020-04-03 16:04:18 windy_gridworld.py draw_figure [86]: Saving plot figures/windy_gridworld_sarsa_stochastic_False_king_True_10000.png done
+2020-04-03 16:04:20 windy_gridworld.py draw_table [129]: Optimal strategy table: 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                      sarsa_stochastic_False_king_True                                                                     |
++---------+-----------+-----------+-----------+----------+-----------+-----------+-----------+------------------------------------------------------+-----------+-----------+
+| row/col |     0     |     1     |     2     |    3     |     4     |     5     |     6     |                          7                           |     8     |     9     |
++---------+-----------+-----------+-----------+----------+-----------+-----------+-----------+------------------------------------------------------+-----------+-----------+
+|    0    |   upleft  | downright |  downleft |   down   | downright | downright |  upright  |                       upright                        |  upright  | downright |
+|    1    |   right   |  downleft |   right   |  right   |    down   |  upright  |  upright  |                       upright                        |  upright  | downright |
+|    2    |  downleft | downright |    down   | downleft | downright | downright |   right   |                      downright                       | downright |    down   |
+|    3    | downright |    down   |  downleft | downleft |  downleft |  upright  | downright | up_down_left_right_upleft_downleft_upright_downright |  downleft |  downleft |
+|    4    |   right   | downright |    down   | downleft | downright | downright | downright |                         down                         |    left   |  downleft |
+|    5    | downright | downright | downright | downleft | downright | downright |   right   |                         down                         |   upleft  |  downleft |
+|    6    |   right   |   right   | downright |  right   |   right   | downright |  upright  |            up_down_left_upright_downright            |  upright  |   upleft  |
++---------+-----------+-----------+-----------+----------+-----------+-----------+-----------+------------------------------------------------------+-----------+-----------+
+2020-04-03 16:04:20 windy_gridworld.py draw_table [130]: Optimal visualized table: 
++---------------------------------------------------------------+
+|                sarsa_stochastic_False_king_True               |
++---------+---+---+---+---+---+---+---+-----------------+---+---+
+| row/col | 0 | 1 | 2 | 3 | 4 | 5 | 6 |        7        | 8 | 9 |
++---------+---+---+---+---+---+---+---+-----------------+---+---+
+|    0    | ↖ | ↘ | ↙ | ↓ | ↘ | ↘ | ↗ |        ↗        | ↗ | ↘ |
+|    1    | → | ↙ | → | → | ↓ | ↗ | ↗ |        ↗        | ↗ | ↘ |
+|    2    | ↙ | ↘ | ↓ | ↙ | ↘ | ↘ | → |        ↘        | ↘ | ↓ |
+|    3    | ↘ | ↓ | ↙ | ↙ | ↙ | ↗ | ↘ | ↑ ↓ ← → ↖ ↙ ↗ ↘ | ↙ | ↙ |
+|    4    | → | ↘ | ↓ | ↙ | ↘ | ↘ | ↘ |        ↓        | ← | ↙ |
+|    5    | ↘ | ↘ | ↘ | ↙ | ↘ | ↘ | → |        ↓        | ↖ | ↙ |
+|    6    | → | → | ↘ | → | → | ↘ | ↗ |    ↑ ↓ ← ↗ ↘    | ↗ | ↖ |
++---------+---+---+---+---+---+---+---+-----------------+---+---+
+2020-04-03 16:04:20 windy_gridworld.py draw_table [131]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                             sarsa_stochastic_False_king_True                            |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    | -6.74 | -6.78 | -6.87 | -6.86 | -6.77 | -6.29 | -5.72 | -5.38 | -4.94 | -4.05 |
+|    1    |  -6.7 | -6.54 | -6.76 | -6.76 | -6.74 | -6.25 | -5.74 | -5.15 | -4.77 | -3.01 |
+|    2    | -6.28 | -5.97 | -6.58 | -6.76 |  -6.7 | -6.26 | -5.84 | -5.08 | -2.92 |  -2.0 |
+|    3    | -5.45 | -6.16 | -6.27 | -6.46 | -6.56 | -6.25 | -5.33 |  0.0  |  0.0  | -1.02 |
+|    4    | -6.45 | -4.69 | -5.15 | -5.92 | -2.13 |  -1.0 |  0.0  |  0.0  |  0.0  |  -1.0 |
+|    5    | -5.84 | -5.15 | -4.88 | -5.63 |  -1.9 |  -1.0 |  0.0  | -0.88 |  0.0  | -1.66 |
+|    6    | -5.46 | -4.78 | -4.85 |  -4.9 | -3.23 |  -1.0 |  0.0  |  0.0  | -0.84 | -0.94 |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+2020-04-03 16:04:55 windy_gridworld.py <module> [20]: Setting logger done.
+2020-04-03 16:04:55 windy_gridworld.py <module> [33]: Setting environment done.
+2020-04-03 16:04:55 windy_gridworld.py <module> [49]: Setting hyperparameters done.
+2020-04-03 16:04:55 windy_gridworld.py q_learning [161]: Method       : q_learning
+2020-04-03 16:04:55 windy_gridworld.py q_learning [162]: Stochastic   : False
+2020-04-03 16:04:55 windy_gridworld.py q_learning [163]: King's move  : True
+2020-04-03 16:04:55 windy_gridworld.py q_learning [164]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 1000
+2020-04-03 16:04:56 windy_gridworld.py draw_figure [87]: Saving plot figures/windy_gridworld_q_learning_stochastic_False_king_True_1000.png done
+2020-06-03 16:06:09 windy_gridworld.py draw_table [130]: Optimal strategy table: 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                          q_learning_stochastic_False_king_True                                                                                                                                          |
++---------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------+-----------+------------------------------------------------------+----------------------------------------+---------------------------------------------+
+| row/col |            0            |            1            |            2            |            3            |            4            |         5         |     6     |                          7                           |                   8                    |                      9                      |
++---------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------+-----------+------------------------------------------------------+----------------------------------------+---------------------------------------------+
+|    0    |        downright        |        downright        |           down          |          upleft         |          upleft         |      upright      | downright |                    right_upright                     |        right_upright_downright         |                down_downright               |
+|    1    |        downright        |           down          |           down          |         downleft        |           left          |      upright      |  upright  |                        right                         |               downright                |                down_downright               |
+|    2    |        downright        |        downright        |           down          |         downleft        |         downleft        |     downright     | downright |                      downright                       |                  down                  |                   downleft                  |
+|    3    | right_upright_downright |     right_downright     |        downright        |         downleft        |        downright        |     downright     | downright | up_down_left_right_upleft_downleft_upright_downright |                downleft                |                   downleft                  |
+|    4    |        downright        | right_upright_downright |     right_downright     |        downright        |        downright        |     downright     | downright |            up_down_right_upleft_downright            |                  left                  |          upleft_downleft_downright          |
+|    5    |          right          |        downright        | right_upright_downright |     right_downright     |     right_downright     |  right_downright  |   right   |     down_right_upleft_downleft_upright_downright     | up_left_right_upleft_upright_downright |       right_downleft_upright_downright      |
+|    6    |          right          |         upright         |         upright         | right_upright_downright | right_upright_downright | upright_downright |  upright  |                     Never reach                      |              Never reach               | down_left_upleft_downleft_upright_downright |
++---------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------+-----------+------------------------------------------------------+----------------------------------------+---------------------------------------------+
+2020-06-03 16:06:09 windy_gridworld.py draw_table [131]: Optimal visualized table: 
++---------------------------------------------------------------------------------------------------------+
+|                                  q_learning_stochastic_False_king_True                                  |
++---------+-------+-------+-------+-------+-------+-----+---+-----------------+-------------+-------------+
+| row/col |   0   |   1   |   2   |   3   |   4   |  5  | 6 |        7        |      8      |      9      |
++---------+-------+-------+-------+-------+-------+-----+---+-----------------+-------------+-------------+
+|    0    |   ↘   |   ↘   |   ↓   |   ↖   |   ↖   |  ↗  | ↘ |       → ↗       |    → ↗ ↘    |     ↓ ↘     |
+|    1    |   ↘   |   ↓   |   ↓   |   ↙   |   ←   |  ↗  | ↗ |        →        |      ↘      |     ↓ ↘     |
+|    2    |   ↘   |   ↘   |   ↓   |   ↙   |   ↙   |  ↘  | ↘ |        ↘        |      ↓      |      ↙      |
+|    3    | → ↗ ↘ |  → ↘  |   ↘   |   ↙   |   ↘   |  ↘  | ↘ | ↑ ↓ ← → ↖ ↙ ↗ ↘ |      ↙      |      ↙      |
+|    4    |   ↘   | → ↗ ↘ |  → ↘  |   ↘   |   ↘   |  ↘  | ↘ |    ↑ ↓ → ↖ ↘    |      ←      |    ↖ ↙ ↘    |
+|    5    |   →   |   ↘   | → ↗ ↘ |  → ↘  |  → ↘  | → ↘ | → |   ↓ → ↖ ↙ ↗ ↘   | ↑ ← → ↖ ↗ ↘ |   → ↙ ↗ ↘   |
+|    6    |   →   |   ↗   |   ↗   | → ↗ ↘ | → ↗ ↘ | ↗ ↘ | ↗ |   Never reach   | Never reach | ↓ ← ↖ ↙ ↗ ↘ |
++---------+-------+-------+-------+-------+-------+-----+---+-----------------+-------------+-------------+
+2020-06-03 16:06:09 windy_gridworld.py draw_table [132]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                          q_learning_stochastic_False_king_True                          |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    | -4.89 | -4.91 | -5.15 | -5.44 | -5.59 | -5.22 | -4.69 |  -4.1 | -3.44 | -2.71 |
+|    1    | -4.68 | -4.67 | -4.68 | -5.12 | -5.22 | -5.16 | -4.68 | -4.09 | -2.71 |  -1.9 |
+|    2    | -4.69 |  -4.1 |  -4.1 | -4.69 | -5.22 | -5.18 | -4.67 | -3.44 | -1.85 |  -1.0 |
+|    3    | -4.69 |  -4.1 | -3.44 | -4.09 | -4.53 | -4.53 | -4.09 |  0.0  |  0.0  | -0.97 |
+|    4    | -4.68 |  -4.1 | -3.44 | -2.71 |  -1.9 |  -1.0 |  0.0  |  0.0  |  0.0  |  -0.5 |
+|    5    | -4.56 | -4.09 | -3.44 | -2.71 |  -1.9 |  -1.0 |  0.0  |  0.0  |  0.0  |  0.0  |
+|    6    | -4.36 | -4.07 | -3.44 | -2.71 |  -1.9 |  -1.0 |  0.0  |  0.0  |  0.0  |  0.0  |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+2020-06-03 16:06:09 windy_gridworld.py sarsa [197]: Method       : sarsa
+2020-06-03 16:06:09 windy_gridworld.py sarsa [198]: Stochastic   : False
+2020-06-03 16:06:09 windy_gridworld.py sarsa [199]: King's move : True
+2020-06-03 16:06:09 windy_gridworld.py sarsa [200]: Configuration: alpha = 0.5 gamma = 0.9 epsilon = 0.1 episode = 1000
+2020-06-03 16:06:11 windy_gridworld.py draw_figure [87]: Saving plot figures/windy_gridworld_sarsa_stochastic_False_king_True_1000.png done
+2020-06-03 16:06:13 windy_gridworld.py draw_table [130]: Optimal strategy table: 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                      sarsa_stochastic_False_king_True                                                                                      |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+------------------------------+------------------------+
+| row/col |     0     |     1     |     2     |     3     |     4     |     5     |     6     |                          7                           |              8               |           9            |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+------------------------------+------------------------+
+|    0    |    down   |   upleft  |    down   |     up    |   right   |  upright  | downright |                       upright                        |            right             |       downright        |
+|    1    |    down   |   upleft  |    down   | downright |    left   | downright |   right   |                        right                         |          downright           |          down          |
+|    2    |    down   |    down   |    down   |    down   |    down   | downright |   right   |                      downright                       |          downright           |        downleft        |
+|    3    | downright |    down   |  downleft |  upright  |     up    |    down   | downright | up_down_left_right_upleft_downleft_upright_downright |           downleft           |          down          |
+|    4    |  downleft | downright |   right   | downright | downright | downright | downright |                down_upleft_downright                 |             left             |          left          |
+|    5    |  upright  |   right   | downright |   right   | downright |   right   |   right   |                 down_upleft_upright                  |            upleft            |    right_downright     |
+|    6    |  upright  |  upright  | downright | downright | downright | downright |  upright  |                     Never reach                      | down_left_downleft_downright | down_left_right_upleft |
++---------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------------------------------------------------+------------------------------+------------------------+
+2020-06-03 16:06:13 windy_gridworld.py draw_table [131]: Optimal visualized table: 
++---------------------------------------------------------------------------+
+|                      sarsa_stochastic_False_king_True                     |
++---------+---+---+---+---+---+---+---+-----------------+---------+---------+
+| row/col | 0 | 1 | 2 | 3 | 4 | 5 | 6 |        7        |    8    |    9    |
++---------+---+---+---+---+---+---+---+-----------------+---------+---------+
+|    0    | ↓ | ↖ | ↓ | ↑ | → | ↗ | ↘ |        ↗        |    →    |    ↘    |
+|    1    | ↓ | ↖ | ↓ | ↘ | ← | ↘ | → |        →        |    ↘    |    ↓    |
+|    2    | ↓ | ↓ | ↓ | ↓ | ↓ | ↘ | → |        ↘        |    ↘    |    ↙    |
+|    3    | ↘ | ↓ | ↙ | ↗ | ↑ | ↓ | ↘ | ↑ ↓ ← → ↖ ↙ ↗ ↘ |    ↙    |    ↓    |
+|    4    | ↙ | ↘ | → | ↘ | ↘ | ↘ | ↘ |      ↓ ↖ ↘      |    ←    |    ←    |
+|    5    | ↗ | → | ↘ | → | ↘ | → | → |      ↓ ↖ ↗      |    ↖    |   → ↘   |
+|    6    | ↗ | ↗ | ↘ | ↘ | ↘ | ↘ | ↗ |   Never reach   | ↓ ← ↙ ↘ | ↓ ← → ↖ |
++---------+---+---+---+---+---+---+---+-----------------+---------+---------+
+2020-06-03 16:06:13 windy_gridworld.py draw_table [132]: Optimal reward table: 
++-----------------------------------------------------------------------------------------+
+|                             sarsa_stochastic_False_king_True                            |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| row/col |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|    0    | -5.97 | -6.05 | -6.13 | -6.28 | -6.37 |  -6.1 | -5.78 | -5.26 | -4.73 | -3.44 |
+|    1    |  -5.9 | -5.94 | -5.88 | -6.08 | -5.85 | -5.73 | -5.59 | -5.19 | -4.11 | -2.16 |
+|    2    |  -5.9 | -5.63 |  -5.7 | -5.75 |  -5.9 | -5.82 |  -5.5 | -4.78 | -3.37 | -1.05 |
+|    3    | -5.33 | -5.44 | -5.16 |  -5.6 | -5.77 | -5.59 | -5.36 |  0.0  |  0.0  |  -1.9 |
+|    4    | -5.65 | -4.69 | -4.12 | -2.77 |  -1.9 |  -1.0 |  0.0  |  0.0  |  0.0  |  -1.0 |
+|    5    |  -5.1 | -4.88 | -4.73 | -2.86 |  -1.9 |  -1.0 |  0.0  |  0.0  |  0.0  |  -0.5 |
+|    6    | -5.02 | -4.67 | -3.91 | -3.16 | -2.35 | -1.39 |  0.0  |  0.0  |  0.0  |  0.0  |
++---------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+

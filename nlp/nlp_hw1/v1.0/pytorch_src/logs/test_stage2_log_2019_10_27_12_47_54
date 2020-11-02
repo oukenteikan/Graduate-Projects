@@ -1,0 +1,13 @@
+THCudaCheck FAIL file=/pytorch/aten/src/THC/THCGeneral.cpp line=74 error=38 : no CUDA-capable device is detected
+Traceback (most recent call last):
+  File "generate.py", line 81, in <module>
+    if args.cuda: model.cuda()
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 258, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 185, in _apply
+    module._apply(fn)
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 191, in _apply
+    param.data = fn(param.data)
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 258, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+RuntimeError: cuda runtime error (38) : no CUDA-capable device is detected at /pytorch/aten/src/THC/THCGeneral.cpp:74

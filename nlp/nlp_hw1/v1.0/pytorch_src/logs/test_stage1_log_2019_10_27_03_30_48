@@ -1,0 +1,4 @@
+  File "generate.py", line 116
+    if args.cuda: input.cuda()
+     ^
+SyntaxError: invalid syntax

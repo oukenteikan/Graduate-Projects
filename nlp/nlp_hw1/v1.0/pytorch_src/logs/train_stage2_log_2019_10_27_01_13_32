@@ -1,0 +1,32 @@
+Producing dataset...
+Saved dictionary to all_vacab.pkl
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+[WeightDrop(
+  (module): LSTM(500, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 500)
+)]
+Using []
+Args: Namespace(alpha=2, batch_size=64, beta=1, bptt=70, clip=0.25, cuda=True, dropout=0.1, dropoute=0.2, dropouth=0.1, dropouti=0.2, emsize=500, epochs=256, log_interval=100, lr=30, model='LSTM', nhid=1000, nlayers=3, nonmono=5, optimizer='sgd', resume='', save='model.pt', save_dir='./title2story_models/', seed=141, test_data='/home/charlie/nlp/data/roc.test', tied=True, train_data='/home/charlie/nlp/data/roc.train', valid_data='/home/charlie/nlp/data/roc.test', vocab_file='all_vacab.pkl', wdecay=1.2e-06, wdrop=0.1, when=[-1])
+Model total parameters: 36009904
+| epoch   1 |   100/ 1310 batches | lr 30.00000 | ms/batch 120.23 | loss  8.15 | ppl  3469.56 | bpc   11.761
+| epoch   1 |   200/ 1310 batches | lr 30.00000 | ms/batch 115.20 | loss  6.69 | ppl   803.77 | bpc    9.651
+| epoch   1 |   300/ 1310 batches | lr 30.00000 | ms/batch 114.91 | loss  6.08 | ppl   436.42 | bpc    8.770
+| epoch   1 |   400/ 1310 batches | lr 30.00000 | ms/batch 112.88 | loss  5.63 | ppl   278.41 | bpc    8.121
+| epoch   1 |   500/ 1310 batches | lr 30.00000 | ms/batch 117.34 | loss  5.38 | ppl   216.90 | bpc    7.761
+| epoch   1 |   600/ 1310 batches | lr 30.00000 | ms/batch 114.98 | loss  5.23 | ppl   186.66 | bpc    7.544
+| epoch   1 |   700/ 1310 batches | lr 30.00000 | ms/batch 116.15 | loss  5.08 | ppl   160.38 | bpc    7.325
+| epoch   1 |   800/ 1310 batches | lr 30.00000 | ms/batch 117.85 | loss  5.01 | ppl   149.21 | bpc    7.221
+| epoch   1 |   900/ 1310 batches | lr 30.00000 | ms/batch 117.65 | loss  4.91 | ppl   135.11 | bpc    7.078
+| epoch   1 |  1000/ 1310 batches | lr 30.00000 | ms/batch 116.26 | loss  4.85 | ppl   127.60 | bpc    6.996
+| epoch   1 |  1100/ 1310 batches | lr 30.00000 | ms/batch 115.12 | loss  4.80 | ppl   121.13 | bpc    6.920
+| epoch   1 |  1200/ 1310 batches | lr 30.00000 | ms/batch 120.46 | loss  4.75 | ppl   116.01 | bpc    6.858
+| epoch   1 |  1300/ 1310 batches | lr 30.00000 | ms/batch 120.66 | loss  4.73 | ppl   113.54 | bpc    6.827
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 171.41s | valid loss  4.38 | valid ppl    80.02 | valid bpc    6.322
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)

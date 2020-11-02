@@ -1,0 +1,89 @@
+THCudaCheck FAIL file=/pytorch/aten/src/THC/generic/THCTensorMath.cu line=26 error=59 : device-side assert triggered
+/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py:477: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters().
+  result = self.forward(*input, **kwargs)
+Producing dataset...
+Saved dictionary to all_vocab.pkl
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+[WeightDrop(
+  (module): LSTM(500, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 500)
+)]
+Resuming model ...
+Args: Namespace(alpha=2, batch_size=32, beta=1, bptt=70, clip=0.25, cuda=True, dropout=0.1, dropoute=0.2, dropouth=0.1, dropouti=0.2, emsize=500, epochs=64, log_interval=100, lr=30, model='LSTM', nhid=1000, nlayers=3, nonmono=5, optimizer='sgd', resume='./pretrain/stage2_pretrain.pt', save='model.pt', save_dir='./title2story_models/', seed=141, test_data='/home/charlie/nlp/data/new_key_no_overlap_roc.test', tied=True, train_data='/home/charlie/nlp/data/new_key_no_overlap_roc.train', valid_data='/home/charlie/nlp/data/new_key_no_overlap_roc.test', vocab_file='all_vocab.pkl', wdecay=1.2e-06, wdrop=0.1, when=[-1])
+Model total parameters: 35990365
+| epoch   1 |   100/ 2621 batches | lr 30.00000 | ms/batch 73.29 | loss  6.46 | ppl   641.06 | bpc    9.324
+| epoch   1 |   200/ 2621 batches | lr 30.00000 | ms/batch 71.39 | loss  5.53 | ppl   251.53 | bpc    7.975
+| epoch   1 |   300/ 2621 batches | lr 30.00000 | ms/batch 71.29 | loss  5.25 | ppl   189.78 | bpc    7.568
+| epoch   1 |   400/ 2621 batches | lr 30.00000 | ms/batch 69.94 | loss  5.08 | ppl   161.06 | bpc    7.331
+| epoch   1 |   500/ 2621 batches | lr 30.00000 | ms/batch 72.33 | loss  4.98 | ppl   145.83 | bpc    7.188
+| epoch   1 |   600/ 2621 batches | lr 30.00000 | ms/batch 71.21 | loss  4.94 | ppl   139.51 | bpc    7.124
+| epoch   1 |   700/ 2621 batches | lr 30.00000 | ms/batch 71.78 | loss  4.87 | ppl   130.30 | bpc    7.026
+| epoch   1 |   800/ 2621 batches | lr 30.00000 | ms/batch 72.76 | loss  4.81 | ppl   123.09 | bpc    6.944
+| epoch   1 |   900/ 2621 batches | lr 30.00000 | ms/batch 72.65 | loss  4.77 | ppl   117.95 | bpc    6.882
+| epoch   1 |  1000/ 2621 batches | lr 30.00000 | ms/batch 71.79 | loss  4.71 | ppl   111.57 | bpc    6.802
+| epoch   1 |  1100/ 2621 batches | lr 30.00000 | ms/batch 71.18 | loss  4.66 | ppl   105.71 | bpc    6.724
+| epoch   1 |  1200/ 2621 batches | lr 30.00000 | ms/batch 72.76 | loss  4.62 | ppl   101.87 | bpc    6.671
+| epoch   1 |  1300/ 2621 batches | lr 30.00000 | ms/batch 71.13 | loss  4.61 | ppl   100.83 | bpc    6.656
+| epoch   1 |  1400/ 2621 batches | lr 30.00000 | ms/batch 72.13 | loss  4.60 | ppl    99.19 | bpc    6.632
+| epoch   1 |  1500/ 2621 batches | lr 30.00000 | ms/batch 74.25 | loss  4.56 | ppl    95.46 | bpc    6.577
+| epoch   1 |  1600/ 2621 batches | lr 30.00000 | ms/batch 75.32 | loss  4.50 | ppl    90.10 | bpc    6.493
+| epoch   1 |  1700/ 2621 batches | lr 30.00000 | ms/batch 74.70 | loss  4.50 | ppl    89.82 | bpc    6.489
+| epoch   1 |  1800/ 2621 batches | lr 30.00000 | ms/batch 76.06 | loss  4.50 | ppl    90.18 | bpc    6.495
+| epoch   1 |  1900/ 2621 batches | lr 30.00000 | ms/batch 75.35 | loss  4.50 | ppl    90.47 | bpc    6.499
+| epoch   1 |  2000/ 2621 batches | lr 30.00000 | ms/batch 74.13 | loss  4.45 | ppl    85.70 | bpc    6.421
+| epoch   1 |  2100/ 2621 batches | lr 30.00000 | ms/batch 74.34 | loss  4.43 | ppl    84.30 | bpc    6.398
+| epoch   1 |  2200/ 2621 batches | lr 30.00000 | ms/batch 75.45 | loss  4.40 | ppl    81.05 | bpc    6.341
+| epoch   1 |  2300/ 2621 batches | lr 30.00000 | ms/batch 76.24 | loss  4.41 | ppl    82.38 | bpc    6.364
+| epoch   1 |  2400/ 2621 batches | lr 30.00000 | ms/batch 76.46 | loss  4.41 | ppl    82.12 | bpc    6.360
+| epoch   1 |  2500/ 2621 batches | lr 30.00000 | ms/batch 75.25 | loss  4.38 | ppl    79.61 | bpc    6.315
+| epoch   1 |  2600/ 2621 batches | lr 30.00000 | ms/batch 76.88 | loss  4.37 | ppl    78.68 | bpc    6.298
+| epoch   1 |  2700/ 2621 batches | lr 30.00000 | ms/batch 76.14 | loss  4.39 | ppl    80.41 | bpc    6.329
+Traceback (most recent call last):
+  File "main.py", line 270, in <module>
+    val_loss = evaluate(val_data, eval_batch_size)
+  File "main.py", line 170, in evaluate
+    output, hidden = model(data, hidden)
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/charlie/nlp/v3.1/pytorch_src/model.py", line 81, in forward
+    raw_output, new_h = rnn(raw_output, hidden[l])
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/charlie/nlp/v3.1/pytorch_src/weight_drop.py", line 47, in forward
+    return self.module.forward(*args)
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: cuda runtime error (59) : device-side assert triggered at /pytorch/aten/src/THC/generic/THCTensorMath.cu:26
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [0,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [1,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [2,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [3,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [4,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [5,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [6,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [7,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [8,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [9,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [10,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [11,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [12,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [13,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [14,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [15,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [16,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [17,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [18,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [19,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [20,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [21,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [22,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+/pytorch/aten/src/THC/THCTensorIndex.cu:362: void indexSelectLargeIndex(TensorInfo<T, IndexType>, TensorInfo<T, IndexType>, TensorInfo<long, IndexType>, int, int, IndexType, IndexType, long) [with T = float, IndexType = unsigned int, DstDim = 2, SrcDim = 2, IdxDim = -2, IndexIsMajor = true]: block: [197,0,0], thread: [23,0,0] Assertion `srcIndex < srcSelectDimSize` failed.

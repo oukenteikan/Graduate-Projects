@@ -1,0 +1,14 @@
+ntokens:  26150
+eot id: 2 | eol id: 7 | eos id: 8 | delimiter id: 11906
+Traceback (most recent call last):
+  File "generate.py", line 151, in <module>
+    output, hidden = model(input, hidden)
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/charlie/nlp/v1.0/pytorch_src/model.py", line 69, in forward
+    emb = embedded_dropout(self.encoder, input, dropout=self.dropoute if self.training else 0)
+  File "/home/charlie/nlp/v1.0/pytorch_src/embed_regularize.py", line 20, in embedded_dropout
+    embed.scale_grad_by_freq, embed.sparse
+  File "/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/functional.py", line 1110, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+RuntimeError: Expected object of type torch.cuda.LongTensor but found type torch.LongTensor for argument #3 'index'

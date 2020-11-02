@@ -1,0 +1,8 @@
+/home/charlie/env/python3/lib/python3.6/site-packages/torch/nn/modules/module.py:477: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters().
+  result = self.forward(*input, **kwargs)
+ntokens:  26150
+eot id: 2 | eol id: 7 | eos id: 8 | delimiter id: 11906
+Traceback (most recent call last):
+  File "generate.py", line 121, in <module>
+    word_idx = samples[0].item()
+NameError: name 'samples' is not defined

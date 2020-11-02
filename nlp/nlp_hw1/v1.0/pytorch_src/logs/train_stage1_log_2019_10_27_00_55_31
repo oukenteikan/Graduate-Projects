@@ -1,0 +1,98 @@
+Producing dataset...
+Saved dictionary to small_vacab.pkl
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+[WeightDrop(
+  (module): LSTM(500, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 500)
+)]
+Using []
+Args: Namespace(alpha=2, batch_size=128, beta=1, bptt=70, clip=0.25, cuda=True, dropout=0.1, dropoute=0.4, dropouth=0.1, dropouti=0.4, emsize=500, epochs=256, log_interval=100, lr=30, model='LSTM', nhid=1000, nlayers=3, nonmono=5, optimizer='sgd', resume='', save='model.pt', save_dir='./title2key_models', seed=141, test_data='/home/charlie/nlp/data/roc_key.test', tied=True, train_data='/home/charlie/nlp/data/roc_key.train', valid_data='/home/charlie/nlp/data/roc_key.test', vocab_file='small_vacab.pkl', wdecay=1.2e-06, wdrop=0.1, when=[-1])
+Model total parameters: 30121150
+| epoch   1 |   100/  103 batches | lr 30.00000 | ms/batch 185.93 | loss  8.50 | ppl  4935.80 | bpc   12.269
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 20.69s | valid loss  7.48 | valid ppl  1775.90 | valid bpc   10.794
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch   2 |   100/  103 batches | lr 30.00000 | ms/batch 178.30 | loss  7.41 | ppl  1657.88 | bpc   10.695
+-----------------------------------------------------------------------------------------
+| end of epoch   2 | time: 20.20s | valid loss  6.60 | valid ppl   733.66 | valid bpc    9.519
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch   3 |   100/  103 batches | lr 30.00000 | ms/batch 181.35 | loss  6.59 | ppl   726.44 | bpc    9.505
+-----------------------------------------------------------------------------------------
+| end of epoch   3 | time: 20.21s | valid loss  5.90 | valid ppl   366.57 | valid bpc    8.518
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch   4 |   100/  103 batches | lr 30.00000 | ms/batch 181.69 | loss  6.21 | ppl   499.39 | bpc    8.964
+-----------------------------------------------------------------------------------------
+| end of epoch   4 | time: 20.89s | valid loss  5.71 | valid ppl   302.23 | valid bpc    8.240
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch   5 |   100/  103 batches | lr 30.00000 | ms/batch 193.13 | loss  5.94 | ppl   378.75 | bpc    8.565
+-----------------------------------------------------------------------------------------
+| end of epoch   5 | time: 21.86s | valid loss  5.66 | valid ppl   286.06 | valid bpc    8.160
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch   6 |   100/  103 batches | lr 30.00000 | ms/batch 195.12 | loss  5.89 | ppl   361.51 | bpc    8.498
+-----------------------------------------------------------------------------------------
+| end of epoch   6 | time: 21.73s | valid loss  5.62 | valid ppl   275.76 | valid bpc    8.107
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch   7 |   100/  103 batches | lr 30.00000 | ms/batch 198.97 | loss  5.81 | ppl   333.92 | bpc    8.383
+-----------------------------------------------------------------------------------------
+| end of epoch   7 | time: 22.06s | valid loss  5.58 | valid ppl   264.20 | valid bpc    8.046
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch   8 |   100/  103 batches | lr 30.00000 | ms/batch 197.62 | loss  5.78 | ppl   325.04 | bpc    8.344
+-----------------------------------------------------------------------------------------
+| end of epoch   8 | time: 21.76s | valid loss  5.55 | valid ppl   256.71 | valid bpc    8.004
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch   9 |   100/  103 batches | lr 30.00000 | ms/batch 198.62 | loss  5.75 | ppl   313.68 | bpc    8.293
+-----------------------------------------------------------------------------------------
+| end of epoch   9 | time: 22.04s | valid loss  5.55 | valid ppl   258.44 | valid bpc    8.014
+-----------------------------------------------------------------------------------------
+| epoch  10 |   100/  103 batches | lr 30.00000 | ms/batch 201.01 | loss  5.74 | ppl   312.29 | bpc    8.287
+-----------------------------------------------------------------------------------------
+| end of epoch  10 | time: 22.27s | valid loss  5.51 | valid ppl   246.99 | valid bpc    7.948
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch  11 |   100/  103 batches | lr 30.00000 | ms/batch 196.58 | loss  5.69 | ppl   296.32 | bpc    8.211
+-----------------------------------------------------------------------------------------
+| end of epoch  11 | time: 21.88s | valid loss  5.57 | valid ppl   262.95 | valid bpc    8.039
+-----------------------------------------------------------------------------------------
+| epoch  12 |   100/  103 batches | lr 30.00000 | ms/batch 199.26 | loss  5.69 | ppl   295.27 | bpc    8.206
+-----------------------------------------------------------------------------------------
+| end of epoch  12 | time: 22.24s | valid loss  5.51 | valid ppl   246.04 | valid bpc    7.943
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch  13 |   100/  103 batches | lr 30.00000 | ms/batch 197.92 | loss  5.70 | ppl   298.60 | bpc    8.222
+-----------------------------------------------------------------------------------------
+| end of epoch  13 | time: 22.61s | valid loss  5.48 | valid ppl   240.96 | valid bpc    7.913
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch  14 |   100/  103 batches | lr 30.00000 | ms/batch 203.69 | loss  5.66 | ppl   286.15 | bpc    8.161
+-----------------------------------------------------------------------------------------
+| end of epoch  14 | time: 22.38s | valid loss  5.47 | valid ppl   238.44 | valid bpc    7.897
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch  15 |   100/  103 batches | lr 30.00000 | ms/batch 194.99 | loss  5.66 | ppl   285.92 | bpc    8.159
+-----------------------------------------------------------------------------------------
+| end of epoch  15 | time: 22.25s | valid loss  5.49 | valid ppl   241.94 | valid bpc    7.918
+-----------------------------------------------------------------------------------------
+| epoch  16 |   100/  103 batches | lr 30.00000 | ms/batch 193.75 | loss  5.62 | ppl   275.55 | bpc    8.106
+-----------------------------------------------------------------------------------------
+| end of epoch  16 | time: 22.22s | valid loss  5.47 | valid ppl   238.36 | valid bpc    7.897
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+| epoch  17 |   100/  103 batches | lr 30.00000 | ms/batch 208.06 | loss  5.64 | ppl   280.40 | bpc    8.131
+-----------------------------------------------------------------------------------------
+| end of epoch  17 | time: 22.93s | valid loss  5.75 | valid ppl   313.60 | valid bpc    8.293
+-----------------------------------------------------------------------------------------
+Switching to ASGD
+| epoch  18 |   100/  103 batches | lr 30.00000 | ms/batch 203.29 | loss  5.63 | ppl   277.57 | bpc    8.117

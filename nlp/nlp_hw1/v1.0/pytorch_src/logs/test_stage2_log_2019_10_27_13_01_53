@@ -1,0 +1,4 @@
+  File "generate.py", line 141
+    if period_count == 5:
+                        ^
+TabError: inconsistent use of tabs and spaces in indentation

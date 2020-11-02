@@ -1,0 +1,5 @@
+ntokens:  26150
+Traceback (most recent call last):
+  File "generate.py", line 87, in <module>
+    start_id = corpus.dictionary.word2idx['</s>']
+KeyError: '</s>'

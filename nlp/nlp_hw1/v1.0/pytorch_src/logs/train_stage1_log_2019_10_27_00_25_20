@@ -1,0 +1,20 @@
+Producing dataset...
+Saved dictionary to small_vacab.pkl
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+[WeightDrop(
+  (module): LSTM(500, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 500)
+)]
+Using []
+Args: Namespace(alpha=2, batch_size=128, beta=1, bptt=70, clip=0.25, cuda=True, dropout=0.1, dropoute=0.4, dropouth=0.1, dropouti=0.4, emsize=500, epochs=256, log_interval=100, lr=30, model='LSTM', nhid=1000, nlayers=3, nonmono=5, optimizer='sgd', resume='', save='model.pt', save_dir='./title2key_models', seed=141, test_data='/home/charlie/nlp/data/roc_key.test', tied=True, train_data='/home/charlie/nlp/data/roc_key.train', valid_data='/home/charlie/nlp/data/roc_key.test', vocab_file='small_vacab.pkl', wdecay=1.2e-06, wdrop=0.1, when=[-1])
+Model total parameters: 30121150
+| epoch   1 |   100/  103 batches | lr 30.00000 | ms/batch 180.43 | loss  8.49 | ppl  4847.62 | bpc   12.243
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 20.20s | valid loss  7.19 | valid ppl  1329.08 | valid bpc   10.376
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)

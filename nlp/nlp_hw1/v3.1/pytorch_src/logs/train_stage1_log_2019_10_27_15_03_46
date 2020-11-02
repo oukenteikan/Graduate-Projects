@@ -1,0 +1,52 @@
+/usr/local/anaconda3/lib/python3.6/site-packages/torch/serialization.py:435: SourceChangeWarning: source code of class 'torch.nn.modules.dropout.Dropout' has changed. you can retrieve the original source code by accessing the object's source attribute or set `torch.nn.Module.dump_patches = True` and use the patch tool to revert the changes.
+  warnings.warn(msg, SourceChangeWarning)
+/usr/local/anaconda3/lib/python3.6/site-packages/torch/serialization.py:435: SourceChangeWarning: source code of class 'torch.nn.modules.sparse.Embedding' has changed. you can retrieve the original source code by accessing the object's source attribute or set `torch.nn.Module.dump_patches = True` and use the patch tool to revert the changes.
+  warnings.warn(msg, SourceChangeWarning)
+/usr/local/anaconda3/lib/python3.6/site-packages/torch/serialization.py:435: SourceChangeWarning: source code of class 'torch.nn.modules.container.ModuleList' has changed. you can retrieve the original source code by accessing the object's source attribute or set `torch.nn.Module.dump_patches = True` and use the patch tool to revert the changes.
+  warnings.warn(msg, SourceChangeWarning)
+/usr/local/anaconda3/lib/python3.6/site-packages/torch/serialization.py:435: SourceChangeWarning: source code of class 'torch.nn.modules.rnn.LSTM' has changed. you can retrieve the original source code by accessing the object's source attribute or set `torch.nn.Module.dump_patches = True` and use the patch tool to revert the changes.
+  warnings.warn(msg, SourceChangeWarning)
+/usr/local/anaconda3/lib/python3.6/site-packages/torch/serialization.py:435: SourceChangeWarning: source code of class 'torch.nn.modules.linear.Linear' has changed. you can retrieve the original source code by accessing the object's source attribute or set `torch.nn.Module.dump_patches = True` and use the patch tool to revert the changes.
+  warnings.warn(msg, SourceChangeWarning)
+/usr/local/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py:179: RuntimeWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters().
+  self.dropout, self.training, self.bidirectional, self.batch_first)
+Producing dataset...
+Saved dictionary to small_vocab.pkl
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+Applying weight drop of 0.1 to weight_hh_l0
+[WeightDrop(
+  (module): LSTM(500, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 1000)
+), WeightDrop(
+  (module): LSTM(1000, 500)
+)]
+Resuming model ...
+Args: Namespace(alpha=2, batch_size=64, beta=1, bptt=70, clip=0.25, cuda=True, dropout=0.1, dropoute=0.4, dropouth=0.1, dropouti=0.4, emsize=500, epochs=16, log_interval=100, lr=30, model='LSTM', nhid=1000, nlayers=3, nonmono=5, optimizer='sgd', resume='./pretrain/title2key_model.pt', save='model.pt', save_dir='./title2key_models', seed=141, test_data='/home/charlie/nlp/data/new_1_5_roc_key.test', tied=True, train_data='/home/charlie/nlp/data/new_1_5_roc_key.train', valid_data='/home/charlie/nlp/data/new_1_5_roc_key.test', vocab_file='small_vocab.pkl', wdecay=1.2e-06, wdrop=0.1, when=[-1])
+Model total parameters: 30121150
+| epoch   1 |   100/  307 batches | lr 30.00000 | ms/batch 100.15 | loss  5.51 | ppl   245.93 | bpc    7.942
+| epoch   1 |   200/  307 batches | lr 30.00000 | ms/batch 97.57 | loss  5.14 | ppl   169.96 | bpc    7.409
+| epoch   1 |   300/  307 batches | lr 30.00000 | ms/batch 100.33 | loss  4.99 | ppl   147.09 | bpc    7.201
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 34.57s | valid loss  4.52 | valid ppl    92.05 | valid bpc    6.524
+-----------------------------------------------------------------------------------------
+Saving model (new best validation)
+Traceback (most recent call last):
+  File "main.py", line 246, in <module>
+    train()
+  File "main.py", line 202, in train
+    output, hidden, rnn_hs, dropped_rnn_hs = model(data, hidden, return_h=True)
+  File "/usr/local/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/charlie/nlp/v2.0/pytorch_src/model.py", line 81, in forward
+    raw_output, new_h = rnn(raw_output, hidden[l])
+  File "/usr/local/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/charlie/nlp/v2.0/pytorch_src/weight_drop.py", line 46, in forward
+    self._setweights()
+  File "/home/charlie/nlp/v2.0/pytorch_src/weight_drop.py", line 43, in _setweights
+    setattr(self.module, name_w, w)
+  File "/usr/local/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 554, in __setattr__
+    .format(torch.typename(value), name))
+TypeError: cannot assign 'torch.cuda.FloatTensor' as parameter 'weight_hh_l0' (torch.nn.Parameter or None expected)
