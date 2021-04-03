@@ -7,22 +7,22 @@ These codes are class projects for computer vision, natural language processing,
 
 ## Computer Vision
 
-### Free anchor on pedestrian
+Free anchor on pedestrian
 
 ## Natural Language Processing
 
-### Homework 1: story generation
+Homework 1: story generation
 
-### Homework 2: songci generation
+Homework 2: songci generation
 
 ## Machine Learning
 
-### Improved free anchor
+Improved free anchor
 
 ## Reinforcement Learning
 
-### Homework 6:    car rent problem
+Homework 6:    car rent problem
 
-### Homework 7:    random walk problem
+Homework 7:    random walk problem
 
-### Final project: windy gridworld problem
+Final project: windy gridworld problem
